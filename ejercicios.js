@@ -1,35 +1,57 @@
 function crearUsuario() {
-    // Crea una función constructor llamada "Usuario"
-    // Debe aceptar un objeto "opciones" con las propiedades "usuario", "nombre", "email" y "password"
-    // En el `contructor`, define el usuario, el nombre, el email y la contraseña
-    // El `contructor` debe tener un método llamado "saludar" en su `prototype` que devuelva una string 'Hola, mi nombre es {{nombre}}'
-    // {{nombre}} debe ser el nombre definido en cada instancia
-    // Devuelve la clase
-    // Tu código:
+  function Usuario(opciones) {
+  this.usuario = opciones.usuario;
+  this.nombre = opciones.nombre;
+  this.email = opciones.email;
+  this.password = opciones.password;
+}
+Usuario.prototype.saludar = function () {
+  return "Hola, mi nombre es " + this.nombre;
+};
+return Usuario;
+}
   
+  ///
+
+    function datosPersona(nombre, apellido, dni) {
+      this.nombre = nombre;
+      this.apellido = apellido;
+      this.DNI = dni
+    }
+    var persona1 = new datosPersona('Juan', 'Perez', '15.003.123');
+    var persona2 = new datosPersona('Jose', 'Paez', '17.888.456');
+    
+    console.log(persona1);
+    console.log(persona2);
+  
+  ///
+  function Default(nombre, apellido, dni) { 
+    this.nombre = nombre || "Cristian"
+    this.apellido = apellido || "Sanchez"
+    this.DNI = dni || "0303456"
+  }
+  var persona1 = new Default();
+  var persona2 = new Default();
+
+  console.log(persona1)
+  console.log(persona2)
+
+  ///
+
+  function Computador(id, marca, procesador, ram, ssd) { 
+    this.id = id;
+    this.marca = marca;
+    this.procesador = procesador;
+    this.ram = ram;
+    this.ssd = ssd;
+    this.inicio = function () {
+      return 'Bienvenido Admin... iniciando sistema';
+    }
   }
 
+  var mipc = new Computador('Ati Mobility Radeon 4500 series', 'MSI', 'Intel Xeon processor', '8Gb', 'SSD SanDisk 1Tb');
 
+console.log(Computador.inicio)
+console.log(mipc)
 
-  function creaObj() { 
-    // Crea una función constructor llamada "datosPersona" y luego crea dos personas nuevas con datos de datosPersona
-    // Los datos, son nombre, apellido y dni
-    // Tu código:
-  }
-  
-  
-  function creaObj2() { 
-    // Crea una función constructor llamada "Default" y luego crea dos personas nuevas con datos de datosPersona sin pasarle ningun campo
-    // Los datos, son nombre, apellido y dni
-    // Los datos que deberian mostrarse al acceder a uno de ellos deben ser por deafult, los que ustedes quieran
-    // Tu código:
-  }
-  
-  function Computador() { 
-    // Deben crear una funcion constructora
-    // Los datos son, id, marca, procesador, ram, ssd.
-    // Deben simular el inicio de una pc en donde primero muestre el mensaje que esta iniciando y luego una funcion que me diga los datos de la computadora.
-    // La funcion debe estar echa dentro de la funcion constructora.
-    // Los datos de la computadora deben guardarse dentro de otra variable y mostrar esa persona para ver los datos.
-    // Tu código:
-  }
+//Joaquin no supe como hacer para que me diera el mensaje de Inicio. espero que lo puedas revisar en la proxima clase.
